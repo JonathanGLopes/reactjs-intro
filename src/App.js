@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 
 
-// Criando um Class Component
+/* Aqui estamos criando componentes em que cada um fica responsável por uma função, assim podendo ser reutilizado e facilitando a edição dos dados. */
+
 class Equipe extends Component{
     render(){
         return(
@@ -30,9 +31,9 @@ class Sobre extends Component {
 const Social = () => {
     return (
         <div>
-            <a href="#">Facebook</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Youtube</a>
+            <a href="#">Facebook </a>
+            <a href="#">LinkedIn </a>
+            <a href="#">Youtube </a>
         </div>
     );
 }
