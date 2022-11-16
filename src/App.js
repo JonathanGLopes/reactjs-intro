@@ -1,52 +1,45 @@
-import React, {Component} from "react";
+import React, {Component} from 'react';
 
+class App extends Component{
 
-/* Aqui estamos criando componentes em que cada um fica responsável por uma função, assim podendo ser reutilizado e facilitando a edição dos dados. */
+    constructor(props){
+        super(props);
+        this.state = {
+            nome: 'Jonathan',
+            contador: 0
+        }
 
-class Equipe extends Component{
+        this.aumentar = this.aumentar.bind(this);
+        this.diminuir = this.diminuir.bind(this);
+    }
+
+    aumentar(){
+        let state = this.state;
+        state.contador += 1;
+        this.setState(state)
+    }
+
+    diminuir(){
+        let state = this.state;
+        if(state.contador === 0){
+            return;
+        }
+        state.contador -= 1;
+        this.setState(state);
+    }
+
     render(){
         return(
             <div>
-                <Sobre nome={this.props.nome} cargo={this.props.cargo} idade={this.props.idade} />
-                <Social/>
-                <hr></hr>
+                <h1>Contador</h1>
+                <h3>
+                    <button onClick={this.diminuir}>-</button>
+                        {this.state.contador}
+                    <button onClick={this.aumentar}>+</button>
+                </h3>
             </div>
-        );
+        )
     }
 }
-
-class Sobre extends Component {
-    render(){
-        return(
-        <div>
-            <h2>Olá, me chamo {this.props.nome}</h2>
-            <h3>Cargo: {this.props.cargo} </h3>
-            <h3>Idade: {this.props.idade} </h3>
-        </div>
-
-        );
-    }
-}
-
-const Social = () => {
-    return (
-        <div>
-            <a href="#">Facebook </a>
-            <a href="#">LinkedIn </a>
-            <a href="#">Youtube </a>
-        </div>
-    );
-}
-
-function App(){
-    return(
-        <div>
-            <h1>Conheça nossa equipe:</h1>
-            <Equipe nome="Matheus" cargo="Desenvolvedor Web" idade="24" />
-            <Equipe nome="Amanda" cargo="Desenvolvedora Mobile" idade="22" />
-        </div>
-    )
-}
-
 
 export default App;
