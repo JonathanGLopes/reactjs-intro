@@ -16,7 +16,7 @@ code {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 14px;
-  color: #707070;
+  color: var(--primaria);
   text-decoration: none;
   text-transform: uppercase;
 }
