@@ -1,11 +1,5 @@
-import React, { Fragment } from "react";
-import Header from './components/header';
-import './components/header/header.css';
-
-function App(){
-    return(
-           <Header />
-    );
+function App() {
+  return <h1>Hello React</h1>;
 }
 
 export default App;
